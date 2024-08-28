@@ -16,10 +16,10 @@
 
 ## 🫂 Contribuidores
 
-Basado en el porfolio com partido por Miguel Angel Duran (@midudev)
+Basado en el porfolio compartido por Miguel Angel Duran (@midudev)
 
 <a href="https://github.com/midudev/porfolio.dev/">
   <img src="https://contrib.rocks/image?repo=midudev/porfolio.dev" />
 </a>
 
-<p></p>
+<p>grande el midu!</p>
