@@ -6,6 +6,8 @@ import AntDesign from "./icons/AntDesign.astro"
 import ReactJS from "./icons/ReactJS.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import NodeJS from "./icons/NodeJS.astro"
+import ExpressJS from "./icons/ExpressJS.astro"
 
 const TAGS = {
   NEXT: {
@@ -28,6 +30,16 @@ const TAGS = {
     class: "bg-[#FFFFF] text-black dark:text-white",
     icon: ReactJS,
   },
+  EXPRESSJS: {
+    name: "Express Js",
+    class: "bg-[#FFFFF] text-black dark:text-white",
+    icon: ExpressJS,
+  },
+  NODEJS: {
+    name: "Node Js",
+    class: "bg-[#FFFFF] text-black dark:text-white",
+    icon: NodeJS,
+  },
 }
 
 const PROJECTS = [
@@ -39,6 +51,15 @@ const PROJECTS = [
     github: "https://github.com/amilcar-laniakea/laniakea-store-v2",
     image: "/laniakea-store.webp",
     tags: [TAGS.REACTJS, TAGS.ANTDESIGN],
+  },
+  {
+    title: "Proyecto de backend con Express y Node.js",
+    description:
+      "Realizado con Express y Node.js, este proyecto es un backend que permite realizar operaciones CRUD sobre una base de datos MongoDB, se puede realizar operaciones de creación, lectura, actualización y eliminación de registros, simulando una lista de proudctos conectada mongoDB y un carro de compras.",
+    link: "https://backend-final-project.amilcarcode.app/",
+    github: "https://github.com/amilcar-laniakea/ch-backend-1",
+    image: "/backend-node.webp",
+    tags: [TAGS.NODEJS, TAGS.EXPRESSJS],
   },
   {
     title: "Projecto de Login con Next.js y Tailwind CSS",
@@ -57,7 +78,7 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
       <div class="w-full md:w-1/2">
         <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-          <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+          <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image} />
         </div>
       </div>
       <div class="w-full md:w-1/2 md:max-w-lg">
