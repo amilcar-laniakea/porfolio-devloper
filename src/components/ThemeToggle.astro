@@ -34,20 +34,16 @@ import MoonIcon from "./icons/Moon.astro"
 <script is:inline>
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
   
-  // Function to get current theme
   const getCurrentTheme = () => {
     const savedTheme = localStorage.getItem("theme")
     
-    // If no saved theme, use system preference
     if (!savedTheme) {
       return mediaQuery.matches ? "dark" : "light"
     }
     
-    // If there's a saved theme, use it
     return savedTheme
   }
 
-  // Function to update icons
   const updateIcons = (theme) => {
     const lightIcon = document.querySelector("#light")
     const darkIcon = document.querySelector("#dark")
@@ -64,13 +60,11 @@ import MoonIcon from "./icons/Moon.astro"
     }
   }
 
-  // Function to apply theme
   const applyTheme = (theme) => {
     document.documentElement.classList.toggle("dark", theme === "dark")
     updateIcons(theme)
   }
 
-  // Function to toggle theme
   const toggleTheme = () => {
     const currentTheme = getCurrentTheme()
     const newTheme = currentTheme === "light" ? "dark" : "light"
@@ -79,13 +73,15 @@ import MoonIcon from "./icons/Moon.astro"
     applyTheme(newTheme)
   }
 
-  // Initialize theme on load
   const initializeTheme = () => {
     const theme = getCurrentTheme()
     applyTheme(theme)
+    
+    requestAnimationFrame(() => {
+      document.documentElement.style.opacity = "1"
+    })
   }
 
-  // Listen to system preference changes only if no manual theme is saved
   const handleSystemThemeChange = () => {
     if (!localStorage.getItem("theme")) {
       const systemTheme = mediaQuery.matches ? "dark" : "light"
@@ -93,20 +89,16 @@ import MoonIcon from "./icons/Moon.astro"
     }
   }
 
-  // Event listeners
   mediaQuery.addEventListener("change", handleSystemThemeChange)
 
-  // Initialize when DOM is ready
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initializeTheme)
   } else {
     initializeTheme()
   }
 
-  // Click on button to toggle theme
   document.getElementById("theme-toggle-btn")?.addEventListener("click", toggleTheme)
 
-  // Reinitialize after Astro transitions
   document.addEventListener('astro:after-swap', () => {
     initializeTheme()
     document.getElementById("theme-toggle-btn")?.addEventListener("click", toggleTheme)
