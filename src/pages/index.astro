@@ -10,6 +10,8 @@ import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
+import Contact from "@/components/Contact.astro"
+import MailIcon from "@/components/icons/Mail.astro"
 ---
 
 <Layout
@@ -45,6 +47,14 @@ import TitleSection from "@/components/TitleSection.astro"
           Sobre mí
         </TitleSection>
         <AboutMe />
+      </SectionContainer>
+
+      <SectionContainer id="contacto">
+        <TitleSection>
+          <MailIcon class="size-8" />
+          Contacto
+        </TitleSection>
+        <Contact />
       </SectionContainer>
     </div>
   </main>
