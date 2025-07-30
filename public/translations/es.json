@@ -1,4 +1,14 @@
 {
+  "projects": {
+    "laniakea_title": "Laniakea Store - prototipo tienda e-commerce",
+    "laniakea_desc": "prototipo de tienda  tipo e-commerce desarrollada en ReactJs con AntDesign y Firebase, en la cual se pueden agregar productos al carrito, ver detalles de los productos y realizar una compra simulada de los mismos.",
+    "backend_title": "Proyecto de backend con Express y Node.js",
+    "backend_desc": "Realizado con Express y Node.js, este proyecto es un backend que permite realizar operaciones CRUD sobre una base de datos MongoDB, se puede realizar operaciones de creación, lectura, actualización y eliminación de registros, simulando una lista de proudctos conectada mongoDB y un carro de compras.",
+    "login_title": "Projecto de Login con Next.js y Tailwind CSS",
+    "login_desc": "Comming soon...",
+    "code": "Código",
+    "preview": "Vista previa"
+  },
   "navigation": {
     "experience": "Experiencia",
     "projects": "Proyectos",
