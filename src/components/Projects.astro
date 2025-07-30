@@ -8,48 +8,96 @@ import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 import NodeJS from "./icons/NodeJS.astro"
 import ExpressJS from "./icons/ExpressJS.astro"
+import Astr from "./icons/Astr.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import TypeScript from "./icons/TypeScript.astro"
+import Infrastructure from "./icons/Infrastructure.astro"
 
 const TAGS = {
   NEXT: {
     name: "Next.js",
+    nameKey: "projects.tag_next",
     class: "bg-black text-white",
     icon: NextJS,
   },
   TAILWIND: {
     name: "Tailwind CSS",
+    nameKey: "projects.tag_tailwind",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
   ANTDESIGN: {
     name: "Ant Design",
+    nameKey: "projects.tag_antdesign",
     class: "bg-[#FFFFF] text-blue-600",
     icon: AntDesign,
   },
   REACTJS: {
     name: "React JS",
+    nameKey: "projects.tag_reactjs",
     class: "bg-[#FFFFF] text-black dark:text-white",
     icon: ReactJS,
   },
   EXPRESSJS: {
     name: "Express Js",
+    nameKey: "projects.tag_expressjs",
     class: "bg-[#FFFFF] text-black dark:text-white",
     icon: ExpressJS,
   },
   NODEJS: {
     name: "Node Js",
+    nameKey: "projects.tag_nodejs",
     class: "bg-[#FFFFF] text-black dark:text-white",
     icon: NodeJS,
+  },
+  ASTR: {
+    name: "Astro",
+    nameKey: "projects.tag_astro",
+    class: "bg-[#1A1A1A] text-orange-500",
+    icon: Astr,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    nameKey: "projects.tag_javascript",
+    class: "bg-[#F7DF1E] text-black",
+    icon: JavaScript,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    nameKey: "projects.tag_typescript",
+    class: "bg-[#3178C6] text-white",
+    icon: TypeScript,
+  },
+  INFRASTRUCTURE: {
+    name: "Infrastructure",
+    nameKey: "projects.tag_infrastructure",
+    class: "bg-[#2E3440] text-[#88C0D0]",
+    icon: Infrastructure,
   },
 }
 
 const PROJECTS = [
   {
-    titleKey: "projects.laniakea_title",
-    descKey: "projects.laniakea_desc",
-    link: "https://laniakea-store-v2.amilcarcode.app",
-    github: "https://github.com/amilcar-laniakea/laniakea-store-v2",
-    image: "/laniakea-store.webp",
-    tags: [TAGS.REACTJS, TAGS.ANTDESIGN],
+    titleKey: "projects.portfolio_title",
+    descKey: "projects.portfolio_desc",
+    link: "https://porfolio.amilcarcode.app/",
+    github: "https://github.com/amilcar-laniakea/porfolio-devloper",
+    image: "/default-img.webp",
+    tags: [TAGS.ASTR, TAGS.TAILWIND],
+  },
+  {
+    titleKey: "projects.lazy_loading_title",
+    descKey: "projects.lazy_loading_desc",
+    github: "https://github.com/amilcar-laniakea/infinity-scroll-react-ts-with-image-lazy-load",
+    image: "/default-img.webp",
+    tags: [TAGS.JAVASCRIPT],
+  },
+  {
+    titleKey: "projects.cicd_template_title",
+    descKey: "projects.cicd_template_desc",
+    github: "https://github.com/amilcar-laniakea/express-template-ts-husky-commitlint-lint-staged",
+    image: "/default-img.webp",
+    tags: [TAGS.TYPESCRIPT, TAGS.INFRASTRUCTURE],
   },
   {
     titleKey: "projects.backend_title",
@@ -60,12 +108,13 @@ const PROJECTS = [
     tags: [TAGS.NODEJS, TAGS.EXPRESSJS],
   },
   {
-    titleKey: "projects.login_title",
-    descKey: "projects.login_desc",
-    link: "https://github.com/amilcar-laniakea",
-    image: "/projects/coming-soon.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
+    titleKey: "projects.laniakea_title",
+    descKey: "projects.laniakea_desc",
+    link: "https://laniakea-store-v2.amilcarcode.app",
+    github: "https://github.com/amilcar-laniakea/laniakea-store-v2",
+    image: "/laniakea-store.webp",
+    tags: [TAGS.REACTJS, TAGS.ANTDESIGN],
+  }
 ]
 ---
 
@@ -88,7 +137,7 @@ const PROJECTS = [
                   class={`flex gap-x-2 rounded-full border border-gray-600 text-xs ${tag.class} py-1 px-2 `}
                 >
                   <tag.icon class="size-4" />
-                  {tag.name}
+                  <span data-translate={tag.nameKey}>{tag.name}</span>
                 </span>
               </li>
             ))}

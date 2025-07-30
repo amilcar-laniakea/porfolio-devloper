@@ -6,6 +6,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.3.0] - 2025-07-30
+
+### ✨ Added
+- **New Projects Section:** Added two new projects to the portfolio:
+  - **Lazy Loading - Native JavaScript Implementation:** Comprehensive repository showcasing advanced lazy loading techniques with infinite scroll and image optimization
+  - **CI/CD Template - Husky, TypeScript & Linting Integration:** Development template for maintaining code standards in small to medium teams
+- **New Technology Tags:** 
+  - JavaScript tag with official JS logo icon
+  - TypeScript tag with official TS logo icon  
+  - Infrastructure tag with custom DevOps-themed icon
+- **Enhanced Multilanguage Support:** Added complete English and Spanish translations for new projects and technology tags
+- **Icon Components:** Created new SVG icon components for JavaScript, TypeScript, and Infrastructure technologies
+
+### 🎨 Improved
+- **Projects Structure:** Enhanced project data structure with proper multilanguage support for technology tags
+- **Icon Rendering:** Improved dynamic icon rendering system to handle both component-based and plain .astro file icons
+- **Project Descriptions:** Enhanced and refined project descriptions for better clarity and professional presentation
+
+### 🔧 Fixed
+- **Astro Icon Compatibility:** Resolved rendering issues with Astro icon component by standardizing icon file structure
+- **Import References:** Fixed import paths and component references in Projects.astro
+
 ## [1.2.10] - 2025-07-30
 
 ### 🐞 Fixed
