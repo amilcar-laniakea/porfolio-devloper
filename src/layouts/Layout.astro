@@ -3,6 +3,7 @@ import "@fontsource-variable/onest"
 
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
+import AnimatedBackground from "../components/AnimatedBackground.astro"
 import { ViewTransitions } from "astro:transitions"
 
 interface Props {
@@ -22,7 +23,7 @@ const { description, title } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    
+
     <ViewTransitions />
     
     <script is:inline>
@@ -74,6 +75,7 @@ const { description, title } = Astro.props
   </head>
 
   <body class="relative text-black dark:text-white">
+    <AnimatedBackground />
     <div
       class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-black"
     >

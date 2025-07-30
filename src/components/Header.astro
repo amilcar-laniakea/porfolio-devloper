@@ -30,28 +30,114 @@ const navItems = [
 ]
 ---
 
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
-  <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
-  >
-    {
-      navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 min-w-[95px] hover:scale-105"
-          aria-label={link.label}
-          href={link.url}
-          data-translate={link.translateKey}
-        >
-          {link.title}
-        </a>
-      ))
-    }
-    <LanguageToggle />
-    <ThemeToggle />
+
+
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
+  <nav class="relative flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center w-full">
+    {/* Nav items with scroll effect and rounded background */}
+    <div class="flex-1 flex justify-start items-center sm:justify-center">
+      <div class="relative">
+        <div class="hidden md:flex justify-center items-center nav-bg-effect rounded-full px-4 py-1">
+          {navItems.map((link) => (
+            <a
+              class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 min-w-[95px] hover:scale-105"
+              aria-label={link.label}
+              href={link.url}
+              data-translate={link.translateKey}
+            >
+              {link.title}
+            </a>
+          ))}
+        </div>
+        {/* Mobile burger menu */}
+        <div class="flex md:hidden items-center">
+          <button id="burger-btn" class="p-2 focus:outline-none" aria-label="Open menu">
+            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div id="burger-menu" class="fixed left-0 top-12 w-full bg-white dark:bg-gray-800 rounded-b-lg shadow-lg backdrop-blur hidden z-50">
+            <div class="flex flex-col items-center py-2 rounded-b-lg">
+              {navItems.map((link) => (
+                <a
+                  class="block w-full px-4 py-3 text-center transition hover:text-blue-500 dark:hover:text-blue-500"
+                  aria-label={link.label}
+                  href={link.url}
+                  data-translate={link.translateKey}
+                  onclick="document.getElementById('burger-menu').classList.add('hidden')"
+                >
+                  {link.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {/* Language and Theme toggles absolutely/fixed at right */}
+    <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
+      <LanguageToggle />
+      <ThemeToggle />
+    </div>
   </nav>
 </header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
+
+    const callback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-blue-500");
+            } else {
+              item.classList.remove("text-blue-500");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+
+    // Burger menu logic
+    const burgerBtn = document.getElementById('burger-btn');
+    const burgerMenu = document.getElementById('burger-menu');
+    if (burgerBtn && burgerMenu) {
+      burgerBtn.addEventListener('click', () => {
+        burgerMenu.classList.toggle('hidden');
+      });
+      // Close menu on click outside
+      document.addEventListener('click', (e) => {
+        const target = e.target as Node;
+        if (!burgerMenu.contains(target) && !burgerBtn.contains(target)) {
+          burgerMenu.classList.add('hidden');
+        }
+      });
+    }
+  });
+</script>
 
 <script>
   document.addEventListener("astro:page-load", () => {
@@ -100,17 +186,18 @@ const navItems = [
     animation-timeline: scroll();
     animation-range: 0 100px;
   }
-
-  nav {
-    @apply dark:bg-gray-800/90 bg-white/50;
+  .nav-bg-effect {
+    @apply dark:bg-gray-800/90 bg-white/50 shadow-lg backdrop-blur;
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
   }
-
   @keyframes nav-shadown {
     0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
+      @apply dark:bg-gray-800/0 bg-white/0 shadow-none;
     }
     to {
-      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+      @apply  backdrop-blur ring-white/10;
     }
   }
 </style>
