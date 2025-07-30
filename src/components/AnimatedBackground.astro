@@ -1,0 +1,105 @@
+---
+// No props needed
+---
+<canvas id="bg-canvas" class="fixed inset-0 w-full h-full z-[-1] pointer-events-none"></canvas>
+
+<script is:inline>
+// Inspired by mouredev.pro background effect
+const canvas = document.getElementById('bg-canvas');
+if (canvas) {
+  const ctx = canvas.getContext('2d');
+  let dpr = window.devicePixelRatio || 1;
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  let points = [];
+  const POINTS = Math.floor((width * height) / 4000);
+  const LINE_DIST = 120;
+  const RADIUS = 2.2;
+  const SPEED = 0.3;
+
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+  }
+
+  function randomPoint() {
+    return {
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * SPEED,
+      vy: (Math.random() - 0.5) * SPEED
+    };
+  }
+
+  function createPoints() {
+    points = [];
+    for (let i = 0; i < POINTS; i++) {
+      points.push(randomPoint());
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    // Draw lines
+    for (let i = 0; i < points.length; i++) {
+      for (let j = i + 1; j < points.length; j++) {
+        const dx = points[i].x - points[j].x;
+        const dy = points[i].y - points[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < LINE_DIST) {
+          ctx.save();
+          ctx.globalAlpha = 0.15 * (1 - dist / LINE_DIST);
+          ctx.strokeStyle = '#60a5fa'; // blue-400
+          ctx.beginPath();
+          ctx.moveTo(points[i].x, points[i].y);
+          ctx.lineTo(points[j].x, points[j].y);
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+    }
+    // Draw points
+    for (const p of points) {
+      ctx.save();
+      ctx.globalAlpha = 0.7;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, RADIUS, 0, Math.PI * 2);
+      ctx.fillStyle = '#60a5fa'; // blue-400
+      ctx.shadowColor = '#60a5fa';
+      ctx.shadowBlur = 6;
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  function animate() {
+    for (const p of points) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > width) p.vx *= -1;
+      if (p.y < 0 || p.y > height) p.vy *= -1;
+    }
+    draw();
+    requestAnimationFrame(animate);
+  }
+
+  function init() {
+    resize();
+    createPoints();
+    animate();
+  }
+
+  window.addEventListener('resize', () => {
+    resize();
+    createPoints();
+  });
+
+  init();
+}
+</script>
