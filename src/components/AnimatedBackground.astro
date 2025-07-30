@@ -1,7 +1,7 @@
 ---
 // No props needed
 ---
-<canvas id="bg-canvas" class="fixed inset-0 w-full h-full z-[-1] pointer-events-none"></canvas>
+<canvas id="bg-canvas" class="fixed inset-0 w-full h-full z-0"></canvas>
 
 <script is:inline>
 // Inspired by mouredev.pro background effect
@@ -44,6 +44,21 @@ if (canvas) {
     }
   }
 
+  // Mouse repulsion effect
+  const MOUSE_RADIUS = 120;
+  const REPULSE_STRENGTH = 3.5;
+  let mouse = { x: null, y: null };
+
+  canvas.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = (e.clientX - rect.left) * (canvas.width / rect.width) / dpr;
+    mouse.y = (e.clientY - rect.top) * (canvas.height / rect.height) / dpr;
+  });
+  canvas.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
   function draw() {
     ctx.clearRect(0, 0, width, height);
     // Draw lines
@@ -76,10 +91,37 @@ if (canvas) {
       ctx.fill();
       ctx.restore();
     }
+    // Debug: draw mouse repulsion area
+    // Uncomment to visualize the repulsion area:
+    // if (mouse.x !== null && mouse.y !== null) {
+    //   ctx.save();
+    //   ctx.globalAlpha = 0.15;
+    //   ctx.beginPath();
+    //   ctx.arc(mouse.x, mouse.y, MOUSE_RADIUS, 0, Math.PI * 2);
+    //   ctx.strokeStyle = '#60a5fa';
+    //   ctx.lineWidth = 1;
+    //   ctx.setLineDash([6, 6]);
+    //   ctx.stroke();
+    //   ctx.setLineDash([]);
+    //   ctx.restore();
+    // }
   }
 
   function animate() {
     for (const p of points) {
+      // Repel points near the mouse
+      if (mouse.x !== null && mouse.y !== null) {
+        const dx = p.x - mouse.x;
+        const dy = p.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MOUSE_RADIUS) {
+          // Move point away from mouse
+          const angle = Math.atan2(dy, dx);
+          const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS * REPULSE_STRENGTH;
+          p.x += Math.cos(angle) * force;
+          p.y += Math.sin(angle) * force;
+        }
+      }
       p.x += p.vx;
       p.y += p.vy;
       if (p.x < 0 || p.x > width) p.vx *= -1;
