@@ -40,11 +40,31 @@ const { description, title } = Astro.props
           return "light";
         };
 
+        const getStoredLanguage = () => {
+          if (typeof localStorage !== 'undefined') {
+            const saved = localStorage.getItem('language');
+            if (saved && (saved === 'es' || saved === 'en')) {
+              return saved;
+            }
+          }
+          
+          if (typeof navigator !== 'undefined') {
+            const browserLang = navigator.language.toLowerCase();
+            if (browserLang.startsWith('es')) return 'es';
+            if (browserLang.startsWith('en')) return 'en';
+          }
+          
+          return 'en';
+        };
+
         const theme = getStoredTheme() || getSystemTheme();
+        const language = getStoredLanguage();
         
         if (theme === "dark") {
           document.documentElement.classList.add("dark");
         }
+        
+        document.documentElement.lang = language;
         
         document.documentElement.style.opacity = "0";
         document.documentElement.style.transition = "opacity 0.3s ease-in-out";

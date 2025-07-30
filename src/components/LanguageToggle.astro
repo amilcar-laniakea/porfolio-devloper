@@ -1,0 +1,162 @@
+---
+// Language Toggle Component
+---
+
+<div class="relative ml-1 mr-1">
+  <button
+    id="language-toggle-btn"
+    class="appearance-none border-none flex hover:scale-110 transition-transform duration-200 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 relative min-w-[60px] items-center justify-center"
+    aria-label="Toggle language"
+  >
+    <span class="sr-only">Toggle between Spanish and English</span>
+    <div class="relative w-10 h-5 bg-gray-300 dark:bg-gray-600 rounded-full">
+      <div id="language-slider" class="absolute top-0.5 left-0.5 w-5 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300 flex items-center justify-center">
+        <span id="current-lang" class="text-[0.55rem] font-bold text-gray-700">ES</span>
+      </div>
+    </div>
+  </button>
+</div>
+
+<script is:inline>
+  if (!window.LanguageManager) {
+    window.LanguageManager = {
+      currentLang: null,
+      translations: {},
+      initialized: false,
+
+      getDefaultLanguage() {
+        if (typeof localStorage !== 'undefined') {
+          const saved = localStorage.getItem('language');
+          if (saved && (saved === 'es' || saved === 'en')) {
+            return saved;
+          }
+        }
+
+        if (typeof navigator !== 'undefined') {
+          const browserLang = navigator.language.toLowerCase();
+          if (browserLang.startsWith('es')) return 'es';
+          if (browserLang.startsWith('en')) return 'en';
+        }
+
+        return 'es';
+      },
+
+      async loadTranslations(lang) {
+        try {
+          const response = await fetch(`/translations/${lang}.json`);
+          if (!response.ok) throw new Error(`Failed to load ${lang} translations`);
+          this.translations[lang] = await response.json();
+          return this.translations[lang];
+        } catch (error) {
+          console.warn(`Could not load ${lang} translations:`, error);
+          return null;
+        }
+      },
+
+      async setLanguage(lang) {
+        this.currentLang = lang;
+        if (typeof localStorage !== 'undefined') {
+          localStorage.setItem('language', lang);
+        }
+        
+        document.documentElement.lang = lang;
+        
+        if (!this.translations[lang]) {
+          await this.loadTranslations(lang);
+        }
+        
+        this.updateUI(lang);
+        this.applyTranslations(lang);
+      },
+
+      updateUI(lang) {
+        const slider = document.getElementById('language-slider');
+        const currentLang = document.getElementById('current-lang');
+        
+        if (slider && currentLang) {
+          if (lang === 'en') {
+            slider.style.transform = 'translateX(16px)';
+            currentLang.textContent = 'EN';
+          } else {
+            slider.style.transform = 'translateX(0px)';
+            currentLang.textContent = 'ES';
+          }
+        }
+      },
+
+      applyTranslations(lang) {
+        const translations = this.translations[lang];
+        if (!translations) return;
+
+        document.querySelectorAll('[data-translate]').forEach(element => {
+          const key = element.getAttribute('data-translate');
+          const keys = key.split('.');
+          let value = translations;
+          
+          for (const k of keys) {
+            value = value?.[k];
+          }
+          
+          if (value) {
+            if (element.hasAttribute('data-translate-html')) {
+              element.innerHTML = value;
+            } else {
+              element.textContent = value;
+            }
+          }
+        });
+      },
+
+      toggleLanguage() {
+        const newLang = this.currentLang === 'es' ? 'en' : 'es';
+        this.setLanguage(newLang);
+      },
+
+      async initialize() {
+        if (this.initialized) return;
+        
+        const lang = this.getDefaultLanguage();
+        this.currentLang = lang;
+        
+        if (typeof localStorage !== 'undefined') {
+          localStorage.setItem('language', lang);
+        }
+        
+        document.documentElement.lang = lang;
+        
+        await this.loadTranslations(lang);
+        this.updateUI(lang);
+        this.applyTranslations(lang);
+        
+        this.initialized = true;
+        
+        requestAnimationFrame(() => {
+          if (document.documentElement.style.opacity === "0") {
+            document.documentElement.style.opacity = "1";
+          }
+        });
+      }
+    };
+  }
+
+  function initializeLanguageToggle() {
+    const toggleBtn = document.getElementById('language-toggle-btn');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        window.LanguageManager.toggleLanguage();
+      });
+    }
+    
+    if (!window.LanguageManager.initialized) {
+      window.LanguageManager.initialize();
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeLanguageToggle);
+  } else {
+    initializeLanguageToggle();
+  }
+
+  document.addEventListener('astro:after-swap', initializeLanguageToggle);
+</script>

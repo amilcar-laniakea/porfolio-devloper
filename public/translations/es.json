@@ -1,0 +1,27 @@
+{
+  "navigation": {
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "badge": "Disponible para trabajar",
+    "name": "Amilcar Barahona",
+    "description": "10 años de experiencia como <strong>Software Engineer</strong> estoy ubicado en Venezuela, desarrollador de aplicaciones web y móviles con alta adaptabilidad en procesos de concepción, formulación y ejecución de proyectos con alta escalabilidad.",
+    "contact": "Contáctame",
+    "linkedin": "LinkedIn",
+    "downloadCV": "Descargar CV"
+  },
+  "aboutMe": {
+    "title": "Sobre mí",
+    "paragraph1": "Cuento con 10 años de experiencia como desarrollador de software y entusiasmo autodidacta. Lideré el desarrollo FrontEnd e hice de supervisor a los desarrollos en el área de backend como Technical Lead en Cencosud S.A., logrando establecer exitosamente un modelo de datos no relacional para el sector de post-purchase experience.",
+    "paragraph2": "Esta planificación sirvió de inicio para desarrollar una base transversal sólida en la <strong>tecnología micro-frontend</strong>, que permitió afianzar objetivos de reducción de costos potenciales de hasta un 30% en relación a servicios dependientes de terceros, muchos de los cuales adolecían de estabilidad y operatividad afectando el flujo de compras para clientes en la empresa."
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Trabajemos juntos",
+    "description": "¿Listo para empezar un proyecto? Me encantaría saber de ti.",
+    "button": "Contáctame"
+  }
+}

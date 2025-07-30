@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-07-29
+
+### ✨ Added
+- **Language Toggle:** Switch between Spanish/English with ES/EN slider toggle in header
+- **Browser Language Detection:** Auto-detects user's browser language on first visit
+- **Translation System:** JSON-based translations for navigation, hero, about, and contact sections
+- **Language Persistence:** Stores language preference in localStorage across sessions
+
+### 🔧 Fixed
+- **Translation Implementation:** Fixed Badge component translation by using slot content instead of attributes
+- **Default Content:** Added English fallback text for all translatable elements
+- **Language Flash Prevention:** Integrated language detection with existing fade-in system
+
 ## [1.1.2] - 2025-07-29
 
 ### 🔧 Fixed

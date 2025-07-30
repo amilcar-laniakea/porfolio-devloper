@@ -19,32 +19,36 @@ import SocialPill from "@/components/SocialPill.astro"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Disponible para trabajar</Badge>
+      <Badge>
+        <span data-translate="hero.badge">Available for work</span>
+      </Badge>
     </a>
   </div>
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+    data-translate="hero.name"
   >
     Amilcar Barahona
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-blue-600 [&>strong]:text-blue-500 [&>strong]:font-semibold dark:text-gray-300"
+    data-translate="hero.description"
+    data-translate-html
   >
-    10 años de experiencia como <strong>Software Engineer</strong
-    > estoy ubicado en Colombia, desarrollador de aplicaciones web y móviles con alta adaptabilidad en procesos de concepción, formulación y ejecución de proyectos con alta escalabilidad.
+    10 years of experience as a <strong>Software Engineer</strong> located in Venezuela, developer of web and mobile applications with high adaptability in conception, formulation and execution processes of highly scalable projects.
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:amilcar.laniakea@gmail.com">
       <MailIcon class="size-4" />
-      Contáctame
+      <span data-translate="hero.contact">Contact me</span>
     </SocialPill>
     <SocialPill href="https://www.linkedin.com/in/amilcar-barahona/">
       <LinkedInIcon class="size-4" />
-      LinkedIn
+      <span data-translate="hero.linkedin">LinkedIn</span>
     </SocialPill>
     <SocialPill href="/amilcar-barahona-cv-spav2.pdf">
       <LinkedInIcon class="size-4" />
-      Descargar CV
+      <span data-translate="hero.downloadCV">Download CV</span>
     </SocialPill>
   </nav>
 </div>
