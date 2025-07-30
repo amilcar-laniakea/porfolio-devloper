@@ -23,6 +23,53 @@ const { description, title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
+    
+    <script is:inline>
+      (function() {
+        const getStoredTheme = () => {
+          if (typeof localStorage !== 'undefined') {
+            return localStorage.getItem("theme");
+          }
+          return null;
+        };
+
+        const getSystemTheme = () => {
+          if (typeof window !== 'undefined' && window.matchMedia) {
+            return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          return "light";
+        };
+
+        const getStoredLanguage = () => {
+          if (typeof localStorage !== 'undefined') {
+            const saved = localStorage.getItem('language');
+            if (saved && (saved === 'es' || saved === 'en')) {
+              return saved;
+            }
+          }
+          
+          if (typeof navigator !== 'undefined') {
+            const browserLang = navigator.language.toLowerCase();
+            if (browserLang.startsWith('es')) return 'es';
+            if (browserLang.startsWith('en')) return 'en';
+          }
+          
+          return 'en';
+        };
+
+        const theme = getStoredTheme() || getSystemTheme();
+        const language = getStoredLanguage();
+        
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+        
+        document.documentElement.lang = language;
+        
+        document.documentElement.style.opacity = "0";
+        document.documentElement.style.transition = "opacity 0.3s ease-in-out";
+      })();
+    </script>
   </head>
 
   <body class="relative text-black dark:text-white">
@@ -33,6 +80,16 @@ const { description, title } = Astro.props
     <Header />
     <slot />
     <Footer />
+    
+    <script is:inline>
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          if (document.documentElement.style.opacity === "0") {
+            document.documentElement.style.opacity = "1";
+          }
+        }, 100);
+      });
+    </script>
     <style is:global>
       :root {
         color-scheme: light dark;

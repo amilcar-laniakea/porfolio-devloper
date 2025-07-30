@@ -1,5 +1,15 @@
+---
+interface Props {
+  className?: string;
+  translateKey?: string;
+}
+
+const { className, translateKey } = Astro.props;
+---
+
 <h2
-	class={`flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white ${Astro.props.className}`}
+	class={`flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white ${className || ''}`}
+	data-translate={translateKey}
 >
     <slot />
 </h2>
