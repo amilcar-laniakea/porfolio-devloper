@@ -23,5 +23,10 @@
     "subtitle": "Let's work together",
     "description": "Ready to start a project? I'd love to hear from you.",
     "button": "Contact Me"
+  },
+  "footer": {
+    "copyright": "© {year} Amilcar Barahona",
+    "about": "About me",
+    "contact": "Contact"
   }
 }
