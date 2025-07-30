@@ -1,4 +1,51 @@
 {
+  "experience": {
+    "technologies": "Technologies:",
+    "tools": "Tools:",
+    "learnMore": "Learn more",
+    "0": {
+      "date": "March 2024 - May 2024",
+      "location": "Remote - Santiago, Chile",
+      "title": "Technical Lead",
+      "company": "Cencosud S.A.",
+      "description_1": "Responsible for the Operation Center platform, the main core of the post-purchase experience section. Also collaborated with a team supporting a unified UI component library to improve and centralize frontend development homogeneity regarding components.",
+      "description_2": "Achieved a potential 30% cost reduction in third-party dependent services."
+    },
+    "1": {
+      "date": "May 2023 - March 2024",
+      "location": "Remote - Santiago, Chile",
+      "title": "Senior Frontend Engineer",
+      "company": "Cencosud S.A.",
+      "description_1": "Responsible for refactoring and updating a platform based on Webpack with Module Federation (micro-frontend), establishing the foundation for migration for different team apps within the company's post-purchase experience ecosystem.",
+      "description_2": "Additionally, improvements were made to a native library that enables orchestration and execution of webpack-react-based apps in the micro-frontend, allowing for resolution and navigation."
+    },
+    "2": {
+      "date": "June 2022 - May 2023",
+      "location": "Remote - Kansas City, United States",
+      "title": "Senior Frontend Engineer",
+      "company": "Toucan Talent (Startup)",
+      "description_1": "Led a frontend development team for a social network-based platform, providing guidance on best development practices, time management, and planning of sprint activities and short, medium, and long-term goals.",
+      "description_2": "Also supervised best practices and clean code in the frontend, enabling more agile and dynamic development, fostering teamwork and pair programming, and establishing effective communication behaviors. Encouraged the setting of goals and objectives that reduced development times by 30%, achieving the release of the first 2 MVPs efficiently."
+    },
+    "3": {
+      "date": "June 2019 - June 2022",
+      "location": "Remote - Santiago, Chile",
+      "title": "Frontend Engineer => Frontend Lead",
+      "company": "Pharol SPA.",
+      "description_1": "Recruited frontend developers and UX/UI designers, ensuring continuity for new developments and features in the app during my time as Technical Lead Frontend. Also developed new features in the frontend app based on VueJS technology, establishing scalability standards for new developments required by the planning team.",
+      "description_2": "Led a migration with the frontend team from the VueJS platform to ReactJS, emphasizing clean code elements to enable scalability, thus reducing platform load times by up to 50%."
+    }
+  },
+  "projects": {
+    "laniakea_title": "Laniakea Store - e-commerce prototype",
+    "laniakea_desc": "E-commerce store prototype built with ReactJs, AntDesign, and Firebase. You can add products to the cart, view product details, and simulate a purchase.",
+    "backend_title": "Backend project with Express and Node.js",
+    "backend_desc": "Built with Express and Node.js, this project is a backend that allows CRUD operations on a MongoDB database, simulating a product list and a shopping cart.",
+    "login_title": "Login Project with Next.js and Tailwind CSS",
+    "login_desc": "Coming soon...",
+    "code": "Code",
+    "preview": "Preview"
+  },
   "navigation": {
     "experience": "Experience",
     "projects": "Projects",
@@ -23,5 +70,10 @@
     "subtitle": "Let's work together",
     "description": "Ready to start a project? I'd love to hear from you.",
     "button": "Contact Me"
+  },
+  "footer": {
+    "copyright": "© {year} Amilcar Barahona",
+    "about": "About me",
+    "contact": "Contact"
   }
 }
