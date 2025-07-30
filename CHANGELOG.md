@@ -1,3 +1,7 @@
+## [1.2.8] - 2025-07-30
+
+### 🎨 Improved
+- **Navigation & Section Headers:** Updated navigation and section header components for better usability and consistency. Includes improved highlighting and structure in `Header.astro` and changes in `TitleSection.astro`.
 # Changelog
 
 All notable changes to this project will be documented in this file.
