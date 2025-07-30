@@ -1,11 +1,48 @@
 {
+  "experience": {
+    "technologies": "Tecnologías:",
+    "tools": "Herramientas:",
+    "learnMore": "Saber más",
+    "0": {
+      "date": "Marzo 2024 - Mayo 2024",
+      "location": "Remoto - Santiago, Chile",
+      "title": "Technical Lead",
+      "company": "Cencosud S.A.",
+      "description_1": "Responsable de la plataforma Operation Center, núcleo principal de la sección post-purchase experience. De igual manera colaboré con un equipo brindando soporte a una librería unificada de componentes UI para mejorar y centralizar la homogeneidad de los desarrollos frontend en cuanto a componentes.",
+      "description_2": "Se logró un 30% de reducción de costos potenciales en servicios dependientes de terceros."
+    },
+    "1": {
+      "date": "Mayo 2023 - Marzo 2024",
+      "location": "Remoto - Santiago, Chile",
+      "title": "Senior Frontend Engineer",
+      "company": "Cencosud S.A.",
+      "description_1": "Responsable de refactorar y actualizar una plataforma basada en Webpack con Module Federation (micro-frontend) que permitió establecer la base en la migración para las diferentes apps de equipos pertenecientes al ecosistema post-purchase experience de la empresa.",
+      "description_2": "Además, se realizaron mejoras en una librería nativa que permite la orquestación y ejecución de apps basadas en webpack-react en el micro-frontend, permitiendo su resolución y navegación."
+    },
+    "2": {
+      "date": "Junio 2022 - Mayo 2023",
+      "location": "Remoto - Kansas City, Estados Unidos",
+      "title": "Senior Frontend Engineer",
+      "company": "Toucan Talent (Startup)",
+      "description_1": "Lideré un equipo de desarrollo front end para una plataforma basada en redes sociales brindando orientación a buenas prácticas de desarrollo, cumplimiento de tiempo y planificación de actividades en sprint y objetivos a corto, mediano y largo plazo.",
+      "description_2": "De igual manera supervisé buenas prácticas y código limpio en el frontend permitiendo desarrollos más ágiles y dinámicos, fomentando el trabajo en equipo y el pair programming, estableciendo conductas efectivas de comunicación. Fomenté el establecimiento de metas y objetivos que permitieron reducir los tiempos de desarrollo en un 30% logrando así el release de los 2 primeros MVP de forma eficaz."
+    },
+    "3": {
+      "date": "Junio 2019 - Junio 2022",
+      "location": "Remoto - Santiago, Chile",
+      "title": "Frontend Engineer => Frontend Lead",
+      "company": "Pharol SPA.",
+      "description_1": "Realicé el reclutamiento de desarrolladores de frontend y diseñadores UX/UI que permitieron dar continuidad a nuevos desarrollos y features en la app durante mi tiempo como Technical Lead Frontend. De igual forma, desarrollé nuevas features en la app de frontend basada en la tecnología VueJS, estableciendo estándares de escalabilidad a nuevos desarrollos requeridos por el equipo de planificación.",
+      "description_2": "Realicé una migración junto con el equipo de frontend de la plataforma VueJS a ReactJS, además de hacer énfasis en elementos de código limpio para permitir su escalabilidad, logrando así reducir tiempos de carga de la plataforma de hasta un 50%."
+    }
+  },
   "projects": {
     "laniakea_title": "Laniakea Store - prototipo tienda e-commerce",
     "laniakea_desc": "prototipo de tienda  tipo e-commerce desarrollada en ReactJs con AntDesign y Firebase, en la cual se pueden agregar productos al carrito, ver detalles de los productos y realizar una compra simulada de los mismos.",
     "backend_title": "Proyecto de backend con Express y Node.js",
     "backend_desc": "Realizado con Express y Node.js, este proyecto es un backend que permite realizar operaciones CRUD sobre una base de datos MongoDB, se puede realizar operaciones de creación, lectura, actualización y eliminación de registros, simulando una lista de proudctos conectada mongoDB y un carro de compras.",
     "login_title": "Projecto de Login con Next.js y Tailwind CSS",
-    "login_desc": "Comming soon...",
+    "login_desc": "Muy pronto...",
     "code": "Código",
     "preview": "Vista previa"
   },

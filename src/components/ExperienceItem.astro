@@ -2,18 +2,18 @@
 import LinkInline from "./LinkInline.astro"
 
 interface Props {
-  title: string
-  company: string
-  description_1: string
-  description_2: string
+  titleKey: string
+  companyKey: string
+  desc1Key: string
+  desc2Key: string
   link?: string
-  date: string
-  location: string
+  dateKey: string
+  locationKey: string
   technologies: string[]
   tools: string[]
 }
 
-const { title, company, description_1, description_2, link, date, location, technologies, tools } = Astro.props
+const { titleKey, companyKey, desc1Key, desc2Key, link, dateKey, locationKey, technologies, tools } = Astro.props
 ---
 
 <div
@@ -25,17 +25,17 @@ const { title, company, description_1, description_2, link, date, location, tech
         >&bull;</span
       >
 
-      <h3 class="text-xl font-bold text-blue-500">{title}</h3>
-      <h4 class="font-semibold text-xl text-gray-600 dark:text-white">{company}</h4>
-      <h5 class="text-sm text-gray-600 dark:text-white">{location}</h5>
-      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
-      <h5 class="text-sm text-gray-600 dark:text-white mt-2">Tecnologias:</h5>
+      <h3 class="text-xl font-bold text-blue-500"><span data-translate={titleKey}></span></h3>
+      <h4 class="font-semibold text-xl text-gray-600 dark:text-white"><span data-translate={companyKey}></span></h4>
+      <h5 class="text-sm text-gray-600 dark:text-white"><span data-translate={locationKey}></span></h5>
+      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80"><span data-translate={dateKey}></span></time>
+      <h5 class="text-sm text-gray-600 dark:text-white mt-2"><span data-translate="experience.technologies"></span></h5>
       <div class="flex flex-wrap max-w-64 gap-x-2 gap-y-0.5">
         {technologies.map((tech) => (
           <span class="text-xs italic text-blue-500 dark:blue-400">{tech}</span>
         ))}
       </div>
-      <h5 class="text-sm text-gray-600 dark:text-white mt-2">Herramientas:</h5>
+      <h5 class="text-sm text-gray-600 dark:text-white mt-2"><span data-translate="experience.tools"></span></h5>
       <div class="flex flex-wrap max-w-64 gap-x-2 gap-y-0.5">
         {tools.map((tech) => (
           <span class="text-xs italic text-blue-500 dark:blue-400">{tech}</span>
@@ -44,14 +44,14 @@ const { title, company, description_1, description_2, link, date, location, tech
     </div>
   </div>
   <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-    {description_1}
+    <span data-translate={desc1Key}></span>
   <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-    {description_2}
+    <span data-translate={desc2Key}></span>
   </div>
     {
       link && (
         <LinkInline href={link}>
-          Saber más{" "}
+          <span data-translate="experience.learnMore"></span>{" "}
           <svg
             class="w-5 icon icon-tabler icon-tabler-chevron-right"
             width="24"
