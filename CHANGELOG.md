@@ -1,13 +1,25 @@
-## [1.2.8] - 2025-07-30
-
-### 🎨 Improved
-- **Navigation & Section Headers:** Updated navigation and section header components for better usability and consistency. Includes improved highlighting and structure in `Header.astro` and changes in `TitleSection.astro`.
 # Changelog
 
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+
+## [1.2.10] - 2025-07-30
+
+### 🐞 Fixed
+- **Burger Menu Dark Mode:** Restored original burger menu background color: white in light mode and gray-800 in dark mode, matching initial design. Fixed dark mode switching issue in responsive menu.
+
+## [1.2.9] - 2025-07-30
+
+### 🎨 Improved
+- **Navigation Menu & Toggles:** Refactored `Header.astro` to center navigation items with a scroll/rounded background effect, and visually separate language/theme toggles, positioning them absolutely for a cleaner, more consistent look across devices.
+
+## [1.2.8] - 2025-07-30
+
+### 🎨 Improved
+- **Navigation & Section Headers:** Updated navigation and section header components for better usability and consistency. Includes improved highlighting and structure in `Header.astro` and changes in `TitleSection.astro`.
 
 ## [1.2.7] - 2025-07-30
 
