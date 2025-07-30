@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1] - 2025-07-29
+
+### ✨ Added
+- **Dynamic CV Links:** CV download automatically switches between Spanish and English PDF files based on selected language
+- **Dynamic LinkedIn Links:** LinkedIn URLs now include locale parameters (es_ES/en_US) for localized LinkedIn experience
+- **Multi-Language Asset Support:** Added separate CV files for Spanish (`amilcar_barahona_es_ve.pdf`) and English (`amilcar_barahona_en_ve.pdf`)
+
+### 🔧 Fixed
+- **Language-Aware URLs:** All external links now respect user's language preference
+- **Cross-Tab Synchronization:** Dynamic links update automatically when language is changed in another browser tab
+
+### 🎯 Behavior
+- **Spanish Mode:** Downloads Spanish CV and opens LinkedIn with Spanish locale
+- **English Mode:** Downloads English CV and opens LinkedIn with English locale
+- **Instant Updates:** Links change immediately when language toggle is used
+- **Persistent Preferences:** Link behavior maintains consistency across browser sessions
+
 ## [1.2.0] - 2025-07-29
 
 ### ✨ Added

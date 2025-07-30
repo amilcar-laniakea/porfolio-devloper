@@ -14,10 +14,11 @@ import SocialPill from "@/components/SocialPill.astro"
       alt={personalImageAlt}
     />
     <a
-      href="https://www.linkedin.com/in/amilcar-barahona/"
+      href="https://www.linkedin.com/in/amilcar-barahona/?locale=es_ES"
       target="_blank"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
+      id="badge-linkedin-link"
     >
       <Badge>
         <span data-translate="hero.badge">Available for work</span>
@@ -42,13 +43,60 @@ import SocialPill from "@/components/SocialPill.astro"
       <MailIcon class="size-4" />
       <span data-translate="hero.contact">Contact me</span>
     </SocialPill>
-    <SocialPill href="https://www.linkedin.com/in/amilcar-barahona/">
+    <SocialPill href="https://www.linkedin.com/in/amilcar-barahona/?locale=es_ES" id="linkedin-link">
       <LinkedInIcon class="size-4" />
       <span data-translate="hero.linkedin">LinkedIn</span>
     </SocialPill>
-    <SocialPill href="/amilcar-barahona-cv-spav2.pdf">
+    <SocialPill href="/amilcar_barahona_es_ve.pdf" id="cv-download-link">
       <LinkedInIcon class="size-4" />
       <span data-translate="hero.downloadCV">Download CV</span>
     </SocialPill>
   </nav>
 </div>
+
+<script>
+  function updateDynamicLinks() {
+    const cvLink = document.getElementById('cv-download-link');
+    const linkedinLink = document.getElementById('linkedin-link');
+    const badgeLinkedinLink = document.getElementById('badge-linkedin-link');
+    
+    // Get current language from localStorage or default to 'es'
+    const currentLanguage = localStorage.getItem('language') || 
+                           (navigator.language.startsWith('es') ? 'es' : 'en');
+    
+    // Update the CV link based on language
+    if (cvLink) {
+      const pdfFile = currentLanguage === 'es' 
+        ? '/amilcar_barahona_es_ve.pdf' 
+        : '/amilcar_barahona_en_ve.pdf';
+      
+      cvLink.setAttribute('href', pdfFile);
+    }
+    
+    // Update the LinkedIn links based on language
+    const linkedinUrl = currentLanguage === 'es'
+      ? 'https://www.linkedin.com/in/amilcar-barahona/?locale=es_ES'
+      : 'https://www.linkedin.com/in/amilcar-barahona/?locale=en_US';
+    
+    if (linkedinLink) {
+      linkedinLink.setAttribute('href', linkedinUrl);
+    }
+    
+    if (badgeLinkedinLink) {
+      badgeLinkedinLink.setAttribute('href', linkedinUrl);
+    }
+  }
+
+  // Update links when page loads
+  document.addEventListener('DOMContentLoaded', updateDynamicLinks);
+  
+  // Listen for language changes
+  document.addEventListener('languageChanged', updateDynamicLinks);
+  
+  // Also update when storage changes (in case language is changed in another tab)
+  window.addEventListener('storage', function(e) {
+    if (e.key === 'language') {
+      updateDynamicLinks();
+    }
+  });
+</script>

@@ -67,6 +67,11 @@
         
         this.updateUI(lang);
         this.applyTranslations(lang);
+        
+        // Dispatch custom event for other components to listen
+        document.dispatchEvent(new CustomEvent('languageChanged', { 
+          detail: { language: lang } 
+        }));
       },
 
       updateUI(lang) {
@@ -129,6 +134,11 @@
         this.applyTranslations(lang);
         
         this.initialized = true;
+        
+        // Dispatch initial language event
+        document.dispatchEvent(new CustomEvent('languageChanged', { 
+          detail: { language: lang } 
+        }));
         
         requestAnimationFrame(() => {
           if (document.documentElement.style.opacity === "0") {
