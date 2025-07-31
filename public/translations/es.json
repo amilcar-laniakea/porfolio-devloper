@@ -3,6 +3,14 @@
     "technologies": "Tecnologías:",
     "tools": "Herramientas:",
     "learnMore": "Saber más",
+    "freelance": {
+      "date": "Mayo 2024 - Presente",
+      "location": "Remoto",
+      "title": "Ingeniero de Software Senior",
+      "company": "Freelance",
+      "description_1": "Desarrollé aplicaciones fullstack para industrias de hospitalidad y recreación, incluyendo sistemas de reservas y plataformas de gestión de actividades. Mejoré la comprensión y aplicación de principios SOLID, implementándolos más efectivamente en proyectos para mejorar el mantenimiento y escalabilidad del código.",
+      "description_2": "Lideré un pequeño equipo de desarrollo para rescatar exitosamente una aplicación recreativa de una implementación casi fallida, entregando una solución funcional dentro del cronograma. Implementé soluciones de automatización de flujos de trabajo con IA usando n8n, desarrollé soluciones de web scraping y gestioné servicios en la nube de AWS incluyendo Aurora RDS, Route 53, EC2 y SES."
+    },
     "0": {
       "date": "Marzo 2024 - Mayo 2024",
       "location": "Remoto - Santiago, Chile",
@@ -45,6 +53,8 @@
     "login_desc": "Muy pronto...",
     "lazy_loading_title": "Lazy Loading - Implementación JavaScript Nativo",
     "lazy_loading_desc": "Un repositorio integral que demuestra técnicas avanzadas de lazy loading para elementos de lista usando JavaScript puro. Incluye scroll infinito, optimización de imágenes y soluciones enfocadas en rendimiento para aplicaciones web modernas.",
+    "backend_vanilla_title": "Proyecto Backend - Implementación JavaScript Nativo",
+    "backend_vanilla_desc": "Una demostración integral de JavaScript vanilla que muestra mejores prácticas en estructura de carpetas, orquestación de componentes y patrones arquitectónicos. Incluye estructura de documentación formal y flujos de trabajo de procesos para mantener mejores prácticas de desarrollo y estándares de organización de código.",
     "cicd_template_title": "Template CI/CD - Integración Husky, TypeScript y Linting",
     "cicd_template_desc": "Un template de desarrollo integral diseñado para mantener estructuras de código adecuadas y estándares para equipos pequeños y medianos. Asegura compatibilidad de código, aplica mejores prácticas y mantiene consistencia en el desarrollo a través de flujos automatizados.",
     "portfolio_title": "Portafolio - Web app Astro",
@@ -59,19 +69,29 @@
     "tag_javascript": "JavaScript",
     "tag_typescript": "TypeScript",
     "tag_infrastructure": "Infraestructura",
+    "tag_notebook": "Documentación",
     "code": "Código",
     "preview": "Vista previa"
   },
   "navigation": {
     "experience": "Experiencia",
     "projects": "Proyectos",
+    "skills": "Habilidades",
     "about": "Sobre mí",
     "contact": "Contacto"
+  },
+  "skills": {
+    "title": "Habilidades y Tecnologías",
+    "core_technologies": "Tecnologías Principales y Habilidades",
+    "tools_collaboration": "Herramientas y Colaboración",
+    "languages": "Idiomas"
   },
   "hero": {
     "badge": "Disponible para trabajar",
     "name": "Amilcar Barahona",
-    "description": "10 años de experiencia como <strong>Ingeniero de Software</strong> estoy ubicado en Venezuela, desarrollador de aplicaciones web y móviles con alta adaptabilidad en procesos de concepción, formulación y ejecución de proyectos con alta escalabilidad.",
+    "title": "<strong>Ingeniero de Software</strong>",
+    "description": "Con 10 años de experiencia en desarrollo de software construida a través del aprendizaje autodidacta continuo, he liderado iniciativas técnicas transformadoras que generan un impacto empresarial medible. Como Líder Técnico, he dirigido y mentorizado exitosamente equipos de desarrollo de pequeño a mediano tamaño, logrando resultados significativos que mejoraron la dinámica de colaboración del equipo y el rendimiento general de los proyectos.",
+    "description_2": "La revolución actual de la Inteligencia Artificial presenta oportunidades críticas que demandan atención y enfoque estratégico. Las áreas clave incluyen la implementación de soluciones de automatización de flujos de trabajo para mejorar la eficiencia operacional y el aprovechamiento de agentes de generación de código para incrementar significativamente la velocidad de desarrollo y la capacidad de entrega de código.",
     "contact": "Contáctame",
     "linkedin": "LinkedIn",
     "downloadCV": "Descargar CV"

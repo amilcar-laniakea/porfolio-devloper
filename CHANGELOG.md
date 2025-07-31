@@ -6,6 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.4.0] - 2025-07-31
+
+### ✨ Added
+- **New Experience Entry:** Added current freelance position (May 2024 - Present) as Software Engineer with comprehensive technology stack including ReactJS, NextJS, AWS services, and AI automation tools
+- **Skills & Technologies Section:** Added dedicated section showcasing core technologies, tools & collaboration, and languages with visual tags and icons
+- **New Backend Project:** Added "Backend Project - Native JavaScript Implementation" as 5th project demonstrating vanilla JavaScript best practices and documentation workflows
+- **New Technology Tags:** 
+  - Documentation/Notebook tag with custom orange styling for documentation-focused projects
+  - Enhanced JavaScript tag usage across projects
+- **Enhanced Navigation:** Added Skills section to main navigation menu for improved user experience
+
+### 🎨 Improved
+- **Skills Section Layout:** Positioned Skills & Technologies section immediately after Hero section for prominent display of technical expertise
+- **Technology Stack Display:** Created reusable TechStack component for consistent presentation of skills with proper icon mapping
+- **Project Descriptions:** Enhanced project descriptions with improved English and Spanish translations focusing on technical achievements and best practices
+- **Experience Timeline:** Updated experience section with most recent freelance work highlighting leadership, project rescue, and AWS cloud services management
+
+### 🔧 Technical Enhancements
+- **Component Architecture:** Developed modular TechStack.astro component supporting 40+ technology mappings with proper icon rendering
+- **Multilanguage Expansion:** Added comprehensive translations for new Skills section and Backend project in both English and Spanish
+- **Icon System Integration:** Enhanced icon rendering system to support new Documentation tag alongside existing technology icons
+- **Project Positioning:** Implemented precise project ordering with new Backend project positioned as 2nd item in portfolio
+
+### 📋 Content Updates
+- **Professional Experience:** Added detailed descriptions of freelance software engineering work including AI workflow automation, team leadership, and full-stack development
+- **Technology Showcase:** Comprehensive display of 25+ core technologies, 15+ collaboration tools, and 3 language proficiencies
+- **Project Documentation:** Enhanced project descriptions emphasizing software engineering best practices, architectural patterns, and formal documentation structures
+
 ## [1.3.0] - 2025-07-30
 
 ### ✨ Added

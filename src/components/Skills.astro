@@ -1,0 +1,37 @@
+---
+import TechStack from "./TechStack.astro"
+
+const CORE_TECHNOLOGIES = [
+  "ReactJS", "TypeScript", "JavaScript", "VueJS", "NextJS", "Webpack", 
+  "Micro-Frontend", "AWS", "Terraform", "Kubernetes", "Git", "NodeJS", 
+  "ExpressJS", "NestJS", "N8N", "Docker", "CI/CD", "PHP", "Laravel", 
+  "Context Engineering", "Product Engineering", "Documentation", "Tech Lead", "MCP"
+];
+
+const TOOLS_COLLABORATION = [
+  "Jira", "Slack", "Figma", "GitHub", "GitLab", "Miro", "Trello", 
+  "ClickUp", "NotebookLM", "Gemini", "Claude", "DeepSeek", "ChatGPT", 
+  "Github Copilot", "Web Scraping Tools"
+];
+
+const LANGUAGES = [
+  "Spanish-native", "English-B1", "Portuguese-learning"
+];
+---
+
+<div class="space-y-8">
+  <TechStack 
+    titleKey="skills.core_technologies" 
+    technologies={CORE_TECHNOLOGIES}
+  />
+  
+  <TechStack 
+    titleKey="skills.tools_collaboration" 
+    technologies={TOOLS_COLLABORATION}
+  />
+  
+  <TechStack 
+    titleKey="skills.languages" 
+    technologies={LANGUAGES}
+  />
+</div>

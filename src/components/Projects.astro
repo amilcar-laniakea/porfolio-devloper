@@ -12,6 +12,7 @@ import Astr from "./icons/Astr.astro"
 import JavaScript from "./icons/JavaScript.astro"
 import TypeScript from "./icons/TypeScript.astro"
 import Infrastructure from "./icons/Infrastructure.astro"
+import Notebook from "./icons/Notebook.astro"
 
 const TAGS = {
   NEXT: {
@@ -74,6 +75,12 @@ const TAGS = {
     class: "bg-[#2E3440] text-[#88C0D0]",
     icon: Infrastructure,
   },
+  NOTEBOOK: {
+    name: "Documentation",
+    nameKey: "projects.tag_notebook",
+    class: "bg-[#FF6B35] text-white",
+    icon: Notebook,
+  },
 }
 
 const PROJECTS = [
@@ -84,6 +91,13 @@ const PROJECTS = [
     github: "https://github.com/amilcar-laniakea/porfolio-devloper",
     image: "/default-img.webp",
     tags: [TAGS.ASTR, TAGS.TAILWIND],
+  },
+  {
+    titleKey: "projects.backend_vanilla_title",
+    descKey: "projects.backend_vanilla_desc",
+    github: "https://github.com/amilcar-laniakea/advanced-backend-2",
+    image: "/default-img.webp",
+    tags: [TAGS.JAVASCRIPT, TAGS.NOTEBOOK],
   },
   {
     titleKey: "projects.lazy_loading_title",

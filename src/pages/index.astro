@@ -12,6 +12,8 @@ import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
 import Contact from "@/components/Contact.astro"
 import MailIcon from "@/components/icons/Mail.astro"
+import Skills from "@/components/Skills.astro"
+import Code from "@/components/icons/Code.astro"
 ---
 
 <Layout
@@ -19,11 +21,20 @@ import MailIcon from "@/components/icons/Mail.astro"
   description="Web developer with extensive knowledge of frontend and backend technologies. 10 years of experience in developing responsive web applications."
 >
   <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
+    <SectionContainer id="skills" class="py-16 md:py-20">
       <Hero>
       </slot>
     </Hero>
     </SectionContainer>
+    
+    <SectionContainer id="skills"  class="pb-20">
+      <TitleSection translateKey="skills.title">
+        <Code class="size-7" />
+        Skills & Technologies
+      </TitleSection>
+      <Skills />
+    </SectionContainer>
+    
     <div class="space-y-24">
       <SectionContainer id="experience">
         <TitleSection translateKey="navigation.experience">

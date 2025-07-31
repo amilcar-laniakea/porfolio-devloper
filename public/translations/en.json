@@ -3,6 +3,14 @@
     "technologies": "Technologies:",
     "tools": "Tools:",
     "learnMore": "Learn more",
+    "freelance": {
+      "date": "May 2024 - Present",
+      "location": "Remote",
+      "title": "Senior Software Engineer",
+      "company": "Freelance",
+      "description_1": "Developed fullstack applications for hospitality and recreational industries, including reservation systems and activity management platforms. Enhanced understanding and application of SOLID principles, implementing them more effectively across projects to improve code maintainability and scalability.",
+      "description_2": "Led a small development team to successfully rescue a recreation application from near-failed implementation, delivering a functional solution within timeline. Implemented AI workflow automation solutions using n8n, developed web scraping solutions, and managed AWS cloud services including Aurora RDS, Route 53, EC2, and SES."
+    },
     "0": {
       "date": "March 2024 - May 2024",
       "location": "Remote - Santiago, Chile",
@@ -45,6 +53,8 @@
     "login_desc": "Coming soon...",
     "lazy_loading_title": "Lazy Loading - Native JavaScript Implementation",
     "lazy_loading_desc": "A comprehensive repository showcasing advanced lazy loading techniques for list items using pure JavaScript. Features infinite scroll, image optimization, and performance-focused solutions for modern web applications.",
+    "backend_vanilla_title": "Backend Project - Native JavaScript Implementation",
+    "backend_vanilla_desc": "A comprehensive vanilla JavaScript demonstration showcasing best practices in folder structure, component orchestration, and architectural patterns. Features formal documentation structure and process workflows to maintain better development practices and code organization standards.",
     "cicd_template_title": "CI/CD Template - Husky, TypeScript & Linting Integration",
     "cicd_template_desc": "A comprehensive development template designed to maintain proper code structure and standards for small to medium teams. Ensures code compatibility, enforces best practices, and maintains development consistency through automated workflows.",
     "portfolio_title": "Portfolio - Astro web app",
@@ -59,19 +69,29 @@
     "tag_javascript": "JavaScript",
     "tag_typescript": "TypeScript",
     "tag_infrastructure": "Infrastructure",
+    "tag_notebook": "Documentation",
     "code": "Code",
     "preview": "Preview"
   },
   "navigation": {
     "experience": "Experience",
     "projects": "Projects",
+    "skills": "Intro & Skills",
     "about": "About me",
     "contact": "Contact"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "core_technologies": "Core Technologies & Skills",
+    "tools_collaboration": "Tools & Collaboration", 
+    "languages": "Languages"
   },
   "hero": {
     "badge": "Available for work",
     "name": "Amilcar Barahona",
-    "description": "10 years of experience as a <strong>Software Engineer</strong> located in Venezuela, developer of web and mobile applications with high adaptability in conception, formulation and execution processes of highly scalable projects.",
+    "title": "<strong>Software Engineer</strong>",
+    "description": "With 10 years of software development expertise built through continuous self-directed learning, I have spearheaded transformative technical initiatives that deliver measurable business impact. As Technical Lead, I have successfully led and mentored small to medium-sized development teams, achieving significant results that enhanced team collaboration dynamics and improved overall project performance.",
+    "description_2": "The current AI revolution presents critical opportunities that demand strategic focus and attention. Key areas include implementing workflow automation solutions to enhance operational efficiency and leveraging code generation agents to significantly increase development velocity and code deliverability.",
     "contact": "Contact me",
     "linkedin": "LinkedIn",
     "downloadCV": "Download CV"

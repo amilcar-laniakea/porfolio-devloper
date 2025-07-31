@@ -1,0 +1,98 @@
+---
+import ReactJS from "./icons/ReactJS.astro"
+import TypeScript from "./icons/TypeScript.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import NextJS from "./icons/NextJS.astro"
+import NodeJS from "./icons/NodeJS.astro"
+import ExpressJS from "./icons/ExpressJS.astro"
+import Infrastructure from "./icons/Infrastructure.astro"
+import GitHub from "./icons/GitHub.astro"
+import VueJS from "./icons/Vue.astro"
+import Webpack from "./icons/Webpack.astro"
+import MicroFrontend from "./icons/MicroFrontend.astro"
+import Schema from "./icons/Schema.astro"
+import Docker from "./icons/Docker.astro"
+import PHP from "./icons/PHP.astro"
+import Laravel from "./icons/Laravel.astro"
+import Automation from "./icons/Automation.astro"
+import Filecode from "./icons/Filecode.astro"
+import SettingsStar from "./icons/SettingsStar.astro"
+import Packages from "./icons/Packages.astro"
+import Slack from "./icons/Slack.astro"
+import Figma from "./icons/Figma.astro"
+import Gitlab from "./icons/Gitlab.astro"
+import Trello from "./icons/Trello.astro"
+import Notebook from "./icons/Notebook.astro"
+import GithubCopilot from "./icons/GithubCopilot.astro"
+import Language from "./icons/Language.astro"
+
+export interface Props {
+  titleKey: string;
+  technologies: string[];
+  class?: string;
+}
+
+const { titleKey, technologies, class: className = "" } = Astro.props;
+
+const TECH_ICONS = {
+  "ReactJS": ReactJS,
+  "TypeScript": TypeScript, 
+  "JavaScript": JavaScript,
+  "NextJS": NextJS,
+  "NodeJS": NodeJS,
+  "ExpressJS": ExpressJS,
+  "VueJS": VueJS,
+  "Webpack": Webpack,
+  "Micro-Frontend": MicroFrontend,
+  "AWS": Infrastructure,
+  "Terraform": Infrastructure,
+  "Kubernetes": Infrastructure,
+  "Git": GitHub,
+  "NestJS": NodeJS,
+  "N8N": Schema,
+  "Docker": Docker,
+  "CI/CD": Schema,
+  "PHP": PHP,
+  "Laravel": Laravel,
+  "Context Engineering": Automation,
+  "Product Engineering": Automation,
+  "Documentation": Filecode,
+  "Tech Lead": SettingsStar,
+  "MCP": Schema,
+  "Jira": Packages,
+  "Slack": Slack,
+  "Figma": Figma,
+  "GitHub": GitHub,
+  "GitLab": Gitlab,
+  "Miro": Packages,
+  "Trello": Trello,
+  "ClickUp": Packages,
+  "NotebookLM": Notebook,
+  "Gemini": Automation,
+  "Claude": Automation,
+  "DeepSeek": Automation,
+  "ChatGPT": Automation,
+  "Github Copilot": GithubCopilot,
+  "Web Scraping Tools": Automation,
+  "Spanish-native": Language,
+  "English-B1": Language,
+  "Portuguese-learning": Language
+};
+---
+
+<div class={`space-y-4 ${className}`}>
+  <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100" data-translate={titleKey}>
+    {titleKey}
+  </h3>
+  <div class="flex flex-wrap gap-2">
+    {technologies.map((tech) => {
+      const IconComponent = TECH_ICONS[tech as keyof typeof TECH_ICONS] || Infrastructure;
+      return (
+        <span class="flex items-center gap-2 px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full border border-gray-300 dark:border-gray-600">
+            <IconComponent class="size-4" />
+          <span>{tech}</span>
+        </span>
+      );
+    })}
+  </div>
+</div>
