@@ -13,6 +13,7 @@ import JavaScript from "./icons/JavaScript.astro"
 import TypeScript from "./icons/TypeScript.astro"
 import Infrastructure from "./icons/Infrastructure.astro"
 import Notebook from "./icons/Notebook.astro"
+import NestJS from "./icons/NestJS.astro"
 
 const TAGS = {
   NEXT: {
@@ -81,6 +82,12 @@ const TAGS = {
     class: "bg-[#FF6B35] text-white",
     icon: Notebook,
   },
+  NESTJS: {
+    name: "NestJS",
+    nameKey: "projects.tag_nestjs",
+    class: "bg-[#E0234E] text-white",
+    icon: NestJS,
+  },
 }
 
 const PROJECTS = [
@@ -91,6 +98,13 @@ const PROJECTS = [
     github: "https://github.com/amilcar-laniakea/porfolio-devloper",
     image: "/default-img.webp",
     tags: [TAGS.ASTR, TAGS.TAILWIND],
+  },
+  {
+    titleKey: "projects.nestjs_ecommerce_title",
+    descKey: "projects.nestjs_ecommerce_desc",
+    github: "https://github.com/amilcar-laniakea/ecommerce-nestjs",
+    image: "/default-img.webp",
+    tags: [TAGS.NESTJS, TAGS.TYPESCRIPT, TAGS.NOTEBOOK],
   },
   {
     titleKey: "projects.backend_vanilla_title",

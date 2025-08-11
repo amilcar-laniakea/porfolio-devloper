@@ -55,6 +55,8 @@
     "lazy_loading_desc": "Un repositorio integral que demuestra técnicas avanzadas de lazy loading para elementos de lista usando JavaScript puro. Incluye scroll infinito, optimización de imágenes y soluciones enfocadas en rendimiento para aplicaciones web modernas.",
     "backend_vanilla_title": "Proyecto Backend - Implementación JavaScript Nativo",
     "backend_vanilla_desc": "Una demostración integral de JavaScript vanilla que muestra mejores prácticas en estructura de carpetas, orquestación de componentes y patrones arquitectónicos. Incluye estructura de documentación formal y flujos de trabajo de procesos para mantener mejores prácticas de desarrollo y estándares de organización de código.",
+    "nestjs_ecommerce_title": "Proyecto Backend - Implementación E-commerce con NestJS",
+    "nestjs_ecommerce_desc": "Un proyecto integral de e-commerce desarrollado con NestJS y TypeScript, implementando principios SOLID basados en clases y arquitectura backend moderna. Incluye prácticas de código limpio, patrones de diseño escalables y desarrollo robusto de APIs sin asistencia de herramientas de IA. Cuenta con documentación integral y sigue las mejores prácticas de la industria.",
     "cicd_template_title": "Template CI/CD - Integración Husky, TypeScript y Linting",
     "cicd_template_desc": "Un template de desarrollo integral diseñado para mantener estructuras de código adecuadas y estándares para equipos pequeños y medianos. Asegura compatibilidad de código, aplica mejores prácticas y mantiene consistencia en el desarrollo a través de flujos automatizados.",
     "portfolio_title": "Portafolio - Web app Astro",
@@ -70,6 +72,7 @@
     "tag_typescript": "TypeScript",
     "tag_infrastructure": "Infraestructura",
     "tag_notebook": "Documentación",
+    "tag_nestjs": "NestJS",
     "code": "Código",
     "preview": "Vista previa"
   },
