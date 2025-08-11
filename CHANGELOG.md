@@ -6,6 +6,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.5.0] - 2025-08-11
+
+### ✨ Added
+- **New NestJS E-commerce Project:** Added comprehensive NestJS e-commerce implementation as 2nd project showcasing TypeScript, class-based SOLID principles, and modern backend architecture
+- **NestJS Technology Tag:** Created new technology tag with official NestJS logo and red theme styling
+- **NestJS Icon Component:** Developed `NestJS.astro` icon component with currentColor support for proper theme integration
+- **Enhanced Project Portfolio:** Added 7th project to portfolio with comprehensive documentation and GitHub repository integration
+
+### 🎨 Improved
+- **Icon Color System:** Updated NestJS icon to use `currentColor` for proper white icon rendering on red background
+- **Background System:** Enhanced main container with theme-aware backgrounds (gray-50 for light mode, gray-900 for dark mode)
+- **Animated Background:** Added opacity controls with theme-specific settings (50% for light mode, 70% for dark mode)
+- **Project Descriptions:** Enhanced multilanguage descriptions highlighting clean code practices, scalable design patterns, and industry best practices
+
+### 🔧 Technical Enhancements
+- **Theme-Aware Styling:** Implemented proper background color system that adapts to light/dark theme toggle
+- **Canvas Opacity Control:** Added theme-responsive opacity settings for animated background canvas
+- **Component Architecture:** Enhanced Projects component with proper NestJS tag integration and icon rendering
+- **Translation System:** Expanded multilanguage support for new NestJS project in both English and Spanish
+
+### 📋 Content Updates
+- **Project Portfolio:** Added "Backend Project - NestJS E-commerce Implementation" with emphasis on TypeScript stack and SOLID principles
+- **Technology Stack:** Expanded technology showcase with NestJS framework representation
+- **Multilanguage Content:** Added comprehensive translations for new project descriptions and technology tags
+- **Professional Presentation:** Enhanced project descriptions to highlight technical achievements and development methodologies
+
 ## [1.4.0] - 2025-07-31
 
 ### ✨ Added
