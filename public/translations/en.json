@@ -45,6 +45,10 @@
     }
   },
   "projects": {
+    "meet_ai_title": "Fullstack Project - Meet AI",
+    "meet_ai_desc": "A sophisticated Next.js 15 fullstack application that enables users to create and interact with customizable AI agents. Built with a modern stack including tRPC, Drizzle ORM, and Better Auth. Features real-time video conversations, comprehensive conversation summaries with keyword highlighting, and persistent chat functionality. Integrates multiple services including Inngest for background tasks, Stream.io for chat/calls, Neon Database, OpenAI API for call processing, and Polar.sh for subscription management.",
+    "nestjs_crm_title": "Backend Project - NestJS CRM-Lite Implementation",
+    "nestjs_crm_desc": "A modern NestJS CRUD application implementing a lightweight CRM system. Built with TypeScript and class-based SOLID principles, featuring clean architecture and comprehensive API documentation. Leverages AI tools for automated changelog generation and documentation management, demonstrating practical integration of AI in development workflows.",
     "laniakea_title": "Laniakea Store - e-commerce prototype",
     "laniakea_desc": "E-commerce store prototype built with ReactJs, AntDesign, and Firebase. You can add products to the cart, view product details, and simulate a purchase.",
     "backend_title": "Backend project with Express and Node.js",
